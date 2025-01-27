@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { fadeUpVariants } from '@/lib/utils';
-import { cn } from '@/lib/utils';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { fadeUpVariants } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 interface Job {
   company: string;
@@ -16,41 +16,67 @@ interface Job {
 export default function Experience() {
   const jobs: Job[] = [
     {
-      company: 'Upstatement',
-      title: 'Lead Engineer',
-      period: 'May 2018 - Present',
+      company: "CodeLab",
+      title: "Développeur Flutter",
+      period: "Septembre 2024 - Janvier 2025",
       responsibilities: [
-        'Write modern, performant, maintainable code for a diverse array of client and internal projects',
-        'Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, React, WordPress, and Netlify',
-        'Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis',
-        'Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship'
+        " A maintenu et implémenté de nouvelles fonctionnalités de l'application mobile Minfo",
+        "A effectué les déploiements de l’application Minfo sur Google Play Store et Apple store",
+        "A maintenu et amélioré le dashboard de Minfo",
+        "A commencé le développement de Pal Learning, une plateforme éducative pour faciliter l’enseignement et l’apprentissage en ligne",
       ],
-      technologies: ['React', 'TypeScript', 'Node.js', 'WordPress', 'AWS', 'Docker']
+      technologies: ["Flutter", "Dart", "NextJs", "React", "TypeScript"],
     },
     {
-      company: 'Scout Studio',
-      title: 'Studio Developer',
-      period: 'January 2017 - April 2018',
+      company: "Caisse Codes",
+      title: "Stagiaire en génie logiciel",
+      period: "Janvier 2024 - Juillet 2024",
       responsibilities: [
-        'Worked with a team of developers to build websites and digital experiences for clients and internal projects',
-        'Collaborated with designers to ensure high-quality, responsive implementations',
-        'Mentored junior developers and provided technical guidance',
-        'Managed project timelines and deliverables for multiple concurrent projects'
+        "A développé RST, un logiciel basé sur Flutter, améliorant la gestion et le suivi de l'activité secondaire de l'entreprise (Activité d’épargne)",
+        "A augmenté l'efficacité de l'analyse des données de plus de 90% grâce à l'intégration d'un outil de filtrage basé sur Flutter dans RST, utilisant le processus de filtrage de Prisma",
+        "A conçu un serveur NestJS avec des systèmes robustes d'authentification et d'autorisation améliorant significativement la sécurité des données pour le logiciel RST",
+        "A implémenté un module de prévision basé sur SQL pour prédire les besoins d'achat de produits en fonction des niveaux d'activité des clients",
       ],
-      technologies: ['JavaScript', 'React', 'PHP', 'Laravel', 'MySQL', 'AWS']
+      technologies: [
+        "Flutter",
+        "Dart",
+        "NestJS",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+      ],
     },
     {
-      company: 'Apple',
-      title: 'UI Engineer Co-op',
-      period: 'July 2016 - December 2016',
+      company: "HERIS Afrique",
+      title: "Stagiaire en génie logiciel",
+      period: "Juillet 2023 - Septembre 2023",
       responsibilities: [
-        'Developed and maintained code for internal tools using React and Ruby',
-        'Collaborated with designers and other developers to create intuitive user interfaces',
-        'Participated in code reviews and provided constructive feedback',
-        'Implemented responsive designs and ensured cross-browser compatibility'
+        "A conçu et développé AuscuRoute, un logiciel basée sur Flutter pour visualiser et stocker les données de dégradation routière traitées par IA",
+        "A collaboré avec l'équipe IA pour assurer une intégration fluide des données traitées dans l'application",
       ],
-      technologies: ['React', 'Ruby', 'Rails', 'PostgreSQL', 'Redis', 'AWS']
-    }
+      technologies: ["Flutter", "Dart"],
+    },
+    {
+      company: "Jackie Sarl",
+      title: "Freelance",
+      period: "Juillet 2023 - Septembre 2023",
+      responsibilities: [
+        "A construit JakieSarl un site web de gestion locale, améliorant le suivi des ventes et la productivité des employés",
+        "A développé un serveur Node.js avec des systèmes d'authentification et d'autorisation, assurant la sécurité des données",
+        "A implémenté des principes de design responsive pour une expérience utilisateur optimale sur tous les appareils",
+      ],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "NodeJs", "MySQL"],
+    },
+    {
+      company: "Astra Horizon",
+      title: "Stagiaire en génie logiciel",
+      period: "Juillet 2022 - Septembre 2022",
+      responsibilities: [
+        "A contribué au développement de Clean4City, accélérant le progrès du développement de l'application de 40%",
+        " A collaboré avec des développeurs seniors pour implémenter de nouvelles fonctionnalités et résoudre des bugs",
+      ],
+      technologies: ["Flutter", "Dart"],
+    },
   ];
 
   const [activeTab, setActiveTab] = useState(0);
@@ -66,14 +92,14 @@ export default function Experience() {
       <motion.div variants={fadeUpVariants}>
         <h2 className="flex items-center whitespace-nowrap text-2xl font-bold text-[#ccd6f6] mb-10 sm:text-3xl">
           <span className="font-mono text-[#64ffda] text-xl mr-2">02.</span>
-          Where I've Worked
+          Expérience
           <span className="relative ml-6 w-full h-[1px] bg-[#233554]" />
         </h2>
       </motion.div>
 
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
         {/* Tab List */}
-        <motion.div 
+        <motion.div
           className="flex sm:flex-col overflow-x-auto sm:overflow-x-visible sm:min-w-[140px] 
                      border-b sm:border-b-0 sm:border-l border-[#233554]"
           variants={fadeUpVariants}
@@ -83,12 +109,12 @@ export default function Experience() {
               key={job.company}
               onClick={() => setActiveTab(index)}
               className={cn(
-                'px-4 py-3 font-mono text-sm text-left whitespace-nowrap hover:bg-[#172a45]/50 hover:text-[#64ffda] transition-colors',
-                'focus:outline-none focus:bg-[#172a45]/50 focus:text-[#64ffda]',
-                'sm:-ml-[2px] sm:border-l-2',
-                activeTab === index 
-                  ? 'text-[#64ffda] border-[#64ffda] bg-[#172a45]/50' 
-                  : 'text-[#8892b0] border-transparent'
+                "px-4 py-3 font-mono text-sm text-left whitespace-nowrap hover:bg-[#172a45]/50 hover:text-[#64ffda] transition-colors",
+                "focus:outline-none focus:bg-[#172a45]/50 focus:text-[#64ffda]",
+                "sm:-ml-[2px] sm:border-l-2",
+                activeTab === index
+                  ? "text-[#64ffda] border-[#64ffda] bg-[#172a45]/50"
+                  : "text-[#8892b0] border-transparent"
               )}
             >
               {job.company}
@@ -97,14 +123,16 @@ export default function Experience() {
         </motion.div>
 
         {/* Tab Panels */}
-        <motion.div 
+        <motion.div
           className="min-h-[320px] sm:min-w-[540px]"
           variants={fadeUpVariants}
         >
           <div className="space-y-4">
             <h3 className="text-xl text-[#ccd6f6]">
-              {jobs[activeTab].title}{' '}
-              <span className="text-[#64ffda]">@ {jobs[activeTab].company}</span>
+              {jobs[activeTab].title}{" "}
+              <span className="text-[#64ffda]">
+                @ {jobs[activeTab].company}
+              </span>
             </h3>
             <p className="font-mono text-sm text-[#8892b0]">
               {jobs[activeTab].period}
@@ -120,9 +148,9 @@ export default function Experience() {
             <div className="pt-6">
               <ul className="flex flex-wrap gap-2.5">
                 {jobs[activeTab].technologies.map((tech, index) => (
-                  <li 
+                  <li
                     key={index}
-                    className="text-xs font-mono text-[#64ffda]"
+                    className="text-xs font-medium font-mono text-[#64ffda]"
                   >
                     {tech}
                   </li>

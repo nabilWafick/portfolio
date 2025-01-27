@@ -4,7 +4,11 @@ export interface Project {
   date: string;
   company?: string;
   techStack: string[];
+  stateManagements: string[];
   url?: string;
+  playStore?: string;
+  appleStore?: string;
+  git?: string;
   description?: string;
   overview?: string;
   features?: {
@@ -19,326 +23,393 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: '1',
-    title: 'AI-Powered Content Generator',
-    date: '2024-01-15',
-    company: 'TechCorp',
-    techStack: ['Python', 'OpenAI API', 'FastAPI', 'React', 'TypeScript'],
-    url: 'https://github.com/techcorp/ai-content',
-    overview: 'An innovative AI-powered content generation platform that leverages the latest in machine learning and natural language processing to create high-quality, contextually relevant content for various use cases.',
-    description: 'The platform combines advanced language models with custom-trained algorithms to generate content that maintains brand voice and meets specific content guidelines. Built with scalability in mind, it can handle multiple concurrent requests while maintaining consistent quality.',
+    id: "minfo",
+    title: "Minfo",
+    date: "2024-09",
+    company: "CodeLab",
+    techStack: ["Flutter", "Dart"],
+    stateManagements: ["GetX", "SetState", "Notifier"],
+    url: "https://app.minfo.com",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.gzone.campaign&hl=fr",
+    appleStore: "https://apps.apple.com/fr/app/minfo/id562527438",
+
+    description:
+      "Application mobile qui vous connecte de manière transparente aux informations et aux interactions dont vous rêvez",
+    overview: `Découvrez une façon révolutionnaire d'interagir avec le monde qui vous entoure ! Minfo, abréviation de « Plus d'informations », transforme les moments quotidiens en expériences riches et interactives grâce à notre technologie brevetée AudioQR. Que vous exploriez de nouveaux produits, profitiez de vos médias préférés ou découvriez du contenu exclusif, Minfo vous .
+
+Principales caractéristiques:
+AudioQR Magic : découvrez la puissance d'AudioQR – un son invisible et inaudible qui vous connecte instantanément à un monde de contenu. Ouvrez simplement l'application Minfo et laissez la magie opérer.
+Intégration transparente : interagissez sans effort avec des émissions de télévision, des programmes de radio et des événements en direct via l'application universelle de Minfo.
+Offres et récompenses exclusives : débloquez des promotions spéciales, des remises et des récompenses de fidélité.
+Informations éducatives : améliorez votre parcours d'apprentissage avec du contenu éducatif interactif.
+Événements et expériences : restez connecté avec vos événements et activités préférés.
+Élargissez vos horizons : voyagez plus intelligemment grâce à des informations détaillées sur les attractions touristiques.
+Informations Complémentaires:
+Minfo vous donne plus d'INFO, facilement et simplement. Notre application universelle transforme les médias, lieux et événements passifs en expériences interactives. Utilisez Minfo partout où vous voyez notre logo pour obtenir instantanément plus d'informations et accéder à un nouveau monde de contenu et d'offres. Minfo est entièrement opt-in, vous donnant le contrôle et vous permettant d'accéder simplement à un nouveau monde d'engagement et d'opportunités.
+
+Minfo... Mes infos... Infos mobiles... Plus d'infos.
+
+Pourquoi Minfo ? :
+Minfo est plus qu'une simple application ; c'est votre compagnon pour explorer et interagir avec le monde de manière nouvelle et passionnante. Notre technologie innovante AudioQR et notre application universelle comblent le fossé entre les mondes numérique et physique, rendant chaque instant plus engageant et informatif.
+
+Quoi de neuf:
+Performances AudioQR améliorées : connexions plus rapides et plus fiables à votre contenu préféré.
+Bibliothèque de contenu étendue : davantage d'offres exclusives, de médias interactifs et de ressources pédagogiques.
+Interface utilisateur améliorée : design plus élégant pour une expérience plus fluide et plus intuitive.
+
+`,
     features: [
       {
-        title: 'Smart Content Generation',
-        description: 'Utilizes OpenAI GPT models with custom fine-tuning for specialized content generation'
+        title: "Gestion d'évènements",
+        description:
+          "Minfo permet de gérer des évènements notamment des campagnes en offrant un écosystème pour la gestion des participants (génération de code QR, connection entre participants, création de campagne personnels et professionnels pour les participants, tchat en participants)",
       },
       {
-        title: 'Real-time Collaboration',
-        description: 'Multiple users can collaborate on content projects with live updates and version control'
+        title: "Encodage de multimédia",
+        description:
+          "Minfo permet de connecter des utilisateurs à des campagnes créées sur la plateforme à travers des fichiers audio et vidéo encodés spécifiquement pour la campagne",
       },
       {
-        title: 'Advanced Analytics',
-        description: 'Comprehensive analytics dashboard for tracking content performance and usage metrics'
+        title: "Ultrason",
+        description:
+          "Minfo permet de connecter des utilisateurs à des campagnes créées sur la plateforme à travers des ultrasons générés spécifiquement pour la campagne",
       },
+
       {
-        title: 'API Integration',
-        description: 'RESTful API endpoints for seamless integration with existing content management systems'
-      }
+        title: "Discussion instantanné",
+        description:
+          "Minfo permet intègre une messagerie instantannée permettant une discussion en temps réel",
+      },
     ],
     media: {
-      video: 'https://example.com/demo.mp4',
+      screenshots: [],
+    },
+  },
+  {
+    id: "pal-learning",
+    title: "Pal Learning",
+    date: "2024-09",
+    company: "CodeLab",
+    techStack: ["Next.js", "React", "TypeScript"],
+    stateManagements: ["Zustand"],
+
+    description: "Plateforme éducative d'apprentisage",
+    overview:
+      "Pal Learning est une plateforme qui a pour but de faciliter l'apprentissage de la programmation à travers des cours vidéos.",
+    features: [
+      {
+        title: "Authentification",
+        description:
+          "L'intégration de l'authentification permettant aux utilisateurs d'accéder à leur dashboard",
+      },
+      {
+        title: "Achat de cours",
+        description:
+          "L'intégration de systèmes de paiement permettant d'achter ds cours",
+      },
+      {
+        title: "Lecture vidéo",
+        description:
+          "Intégration de lecteur vidéo permettant aux utilisateurs de suivre leurs cours directement sur la plateforme",
+      },
+    ],
+    media: {
+      screenshots: [],
+    },
+  },
+  {
+    id: "rst",
+    title: "RST",
+    date: "2024-01",
+    company: "Caisse Codes",
+    techStack: [
+      "Flutter",
+      "Dart",
+      "NestJS",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+    ],
+    stateManagements: ["Riverpod"],
+
+    git: "https://github.com/nabilWafick/rst",
+    description: "Logiciel de gestion et de suivi d'activité d'épargne",
+    overview:
+      "RST est une solution complète pour la gestion des activités d'épargne (locale) permettant la gestion, la suivie, l'analyse de l'activité ainsi la prévision des achats des produits par l'entreprise.",
+    features: [
+      {
+        title: "Authentification",
+        description:
+          "Intégration de l'authentification permettant aux employés uniquement de se connecter et d'utilisr le logiciel",
+      },
+      {
+        title: "Authorisation",
+        description:
+          "Intégration de de la gestion d'authorisation permettant à l'administrateur de donner des accès à des fonctionnalités et interfaces du logiciel",
+      },
+      {
+        title: "CRUD",
+        description:
+          "Mise en place d'un système de CRUD permettant la gestions des données ( produits, types, agents, collecteurs, clients, localités, activités économiques, statuts personnels, cartes, règlements (répartitions))",
+      },
+      {
+        title: "Module de Prévision",
+        description:
+          "Module de prévision SQL pour anticiper les besoins d'achat de produits",
+      },
+    ],
+    media: {
+      video: "https://youtube.com/watch?v=rst_demo",
       screenshots: [
-        'https://example.com/screenshot1.jpg',
-        'https://example.com/screenshot2.jpg',
-        'https://example.com/screenshot3.jpg',
-        'https://example.com/screenshot4.jpg'
-      ]
-    }
+        "/images/rst/dashboard.png",
+        "/images/rst/analytics.png",
+        "/images/rst/forecasting.png",
+      ],
+    },
   },
   {
-    id: '2',
-    title: 'E-commerce Platform',
-    date: '2023-12-20',
-    company: 'Digital Solutions Inc',
-    techStack: ['Next.js', 'Node.js', 'MongoDB', 'Stripe API', 'AWS'],
-    url: 'https://ecommerce-platform.com',
+    id: "auscuroute",
+    title: "AuscuRoute",
+    date: "2023-07",
+    company: "HERIS Afrique",
+    techStack: ["Flutter", "Dart"],
+    stateManagements: ["Riverpod"],
+    url: "https://auscuroute.herisafrique.com",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.herisafrique.auscuroute",
+    appleStore: "https://apps.apple.com/app/auscuroute/id1234567893",
+    git: "https://gitlab.com/heris-afrique/auscuroute",
+    description:
+      "Logiciel de visualisation et de stockage des données de dégradation routière traitées par IA",
+    overview:
+      "AuscuRoute révolutionne la surveillance de l'état des routes en combinant l'IA et la visualisation de données pour une gestion efficace de l'infrastructure routière.",
+    features: [
+      {
+        title: "Intégration IA",
+        description:
+          "Collaboration avec l'équipe IA pour une intégration fluide des données traitées",
+      },
+      {
+        title: "Visualisation des Données",
+        description:
+          "Interface intuitive pour visualiser les données de dégradation routière",
+      },
+      {
+        title: "Stockage Optimisé",
+        description:
+          "Système de stockage efficace pour les données d'analyse routière",
+      },
+    ],
     media: {
+      video: "https://youtube.com/watch?v=auscuroute_demo",
       screenshots: [
-        'https://example.com/ecommerce1.jpg',
-        'https://example.com/ecommerce2.jpg',
-        'https://example.com/ecommerce3.jpg'
-      ]
-    }
+        "/images/auscuroute/map-view.png",
+        "/images/auscuroute/analysis.png",
+        "/images/auscuroute/reports.png",
+      ],
+    },
   },
   {
-    id: '3',
-    title: 'Real-time Analytics Dashboard',
-    date: '2023-11-05',
-    company: 'DataViz Pro',
-    techStack: ['Vue.js', 'D3.js', 'GraphQL', 'PostgreSQL', 'Docker'],
-    url: 'https://analytics-dashboard.io',
+    id: "jakiesarl",
+    title: "JakieSarl",
+    date: "2023-07",
+    company: "JackieSarl",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Node.js", "MySQL"],
+    stateManagements: ["Riverpod"],
+    url: "https://gestion.jakiesarl.bj",
+    git: "https://gitlab.com/jakiesarl/gestion",
+    description:
+      "Site web de gestion locale pour améliorer le suivi des ventes et la productivité des employés",
+    overview:
+      "Plateforme de gestion complète permettant à JakieSarl de digitaliser ses opérations et d'améliorer l'efficacité de ses processus commerciaux.",
+    features: [
+      {
+        title: "Système d'Authentification",
+        description:
+          "Développement d'un serveur Node.js avec systèmes d'authentification et d'autorisation",
+      },
+      {
+        title: "Design Responsive",
+        description:
+          "Implémentation de principes de design responsive pour une expérience utilisateur optimale",
+      },
+      {
+        title: "Gestion des Ventes",
+        description: "Système complet de suivi et d'analyse des ventes",
+      },
+    ],
     media: {
-      video: 'https://example.com/analytics.mp4'
-    }
-  },
-  {
-    id: '4',
-    title: 'Mobile Fitness App',
-    date: '2023-10-15',
-    company: 'HealthTech Startup',
-    techStack: ['React Native', 'Firebase', 'Redux', 'Node.js'],
-    url: 'https://fitnessapp.mobile',
-    media: {
+      video: "https://youtube.com/watch?v=jakiesarl_demo",
       screenshots: [
-        'https://example.com/fitness1.jpg',
-        'https://example.com/fitness2.jpg',
-        'https://example.com/fitness3.jpg'
-      ]
-    }
+        "/images/jakiesarl/dashboard.png",
+        "/images/jakiesarl/sales.png",
+        "/images/jakiesarl/employees.png",
+      ],
+    },
   },
   {
-    id: '5',
-    title: 'Smart Home IoT Platform',
-    date: '2023-09-01',
-    company: 'IoT Solutions',
-    techStack: ['Python', 'MQTT', 'React', 'MongoDB', 'Raspberry Pi'],
-    url: 'https://smarthome-iot.com',
+    id: "clean4city",
+    title: "Clean4City",
+    date: "2022-07",
+    company: "Astra Horizon",
+    techStack: ["Flutter", "Dart"],
+    stateManagements: ["Riverpod"],
+    url: "https://clean4city.astrahorizon.com",
+    playStore:
+      "https://play.google.com/store/apps/details?id=com.astrahorizon.clean4city",
+    appleStore: "https://apps.apple.com/app/clean4city/id1234567894",
+    git: "https://gitlab.com/astra-horizon/clean4city",
+    description:
+      "Application contribuant à l'amélioration de la propreté urbaine avec une accélération du développement de 40%",
+    overview:
+      "Clean4City est une solution innovante pour la gestion de la propreté urbaine, permettant aux citoyens et aux autorités de collaborer pour un environnement plus propre.",
+    features: [
+      {
+        title: "Signalement",
+        description: "Système de signalement des problèmes de propreté urbaine",
+      },
+      {
+        title: "Suivi en Temps Réel",
+        description: "Monitoring en temps réel des interventions de nettoyage",
+      },
+      {
+        title: "Statistiques",
+        description:
+          "Tableau de bord analytique pour le suivi des performances",
+      },
+    ],
     media: {
-      video: 'https://example.com/smarthome.mp4'
-    }
-  },
-  {
-    id: '6',
-    title: 'Social Media Management Tool',
-    date: '2023-08-10',
-    company: 'SocialFlow',
-    techStack: ['Angular', 'Node.js', 'Redis', 'AWS Lambda'],
-    url: 'https://socialflow-tool.com',
-    media: {
+      video: "https://youtube.com/watch?v=clean4city_demo",
       screenshots: [
-        'https://example.com/social1.jpg',
-        'https://example.com/social2.jpg',
-        'https://example.com/social3.jpg'
-      ]
-    }
+        "/images/clean4city/map.png",
+        "/images/clean4city/reporting.png",
+        "/images/clean4city/stats.png",
+      ],
+    },
   },
   {
-    id: '7',
-    title: 'Blockchain Voting System',
-    date: '2023-07-20',
-    company: 'BlockTech',
-    techStack: ['Solidity', 'Ethereum', 'Web3.js', 'React', 'Node.js'],
-    url: 'https://blockchain-voting.eth',
+    id: "stacked",
+    title: "StackEd",
+    date: "2024",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "NestJS",
+      "Prisma",
+      "MongoDB",
+    ],
+    stateManagements: [],
+    url: "https://stacked.education",
+    git: "https://github.com/nabilWafick/stacked",
+    description:
+      "Plateforme simulant l'hébergement de cours et de sites d'adhésion style System.io",
+    overview:
+      "StackEd révolutionne la création et la gestion de cours en ligne en offrant une alternative moderne aux plateformes traditionnelles.",
+    features: [
+      {
+        title: "Gestion de Cours",
+        description:
+          "Système complet de création et de gestion de cours en ligne",
+      },
+      {
+        title: "Adhésions",
+        description: "Gestion avancée des abonnements et des accès",
+      },
+      {
+        title: "Analytics",
+        description: "Tableau de bord détaillé pour le suivi des performances",
+      },
+    ],
     media: {
-      video: 'https://example.com/blockchain.mp4'
-    }
-  },
-  {
-    id: '8',
-    title: 'AI Image Recognition API',
-    date: '2023-06-15',
-    company: 'AI Vision Corp',
-    techStack: ['TensorFlow', 'Python', 'FastAPI', 'Docker', 'AWS'],
-    url: 'https://ai-vision-api.dev',
-    media: {
+      video: "https://youtube.com/watch?v=stacked_demo",
       screenshots: [
-        'https://example.com/ai1.jpg',
-        'https://example.com/ai2.jpg',
-        'https://example.com/ai3.jpg'
-      ]
-    }
+        "/images/stacked/courses.png",
+        "/images/stacked/memberships.png",
+        "/images/stacked/analytics.png",
+      ],
+    },
   },
   {
-    id: '9',
-    title: 'Project Management System',
-    date: '2023-05-01',
-    company: 'Agile Solutions',
-    techStack: ['React', 'GraphQL', 'PostgreSQL', 'TypeScript'],
-    url: 'https://agile-pm.com',
+    id: "armap",
+    title: "ARMap",
+    date: "2024",
+    techStack: ["Flutter", "Dart"],
+    stateManagements: [],
+    url: "https://armap.navigation.bj",
+    playStore:
+      "https://play.google.com/store/apps/details?id=bj.navigation.armap",
+    appleStore: "https://apps.apple.com/app/armap/id1234567895",
+    git: "https://github.com/nabilWafick/armap",
+    description:
+      "Application de navigation mobile innovante intégrant la réalité augmentée avec Google Map",
+    overview:
+      "ARMap transforme l'expérience de navigation en combinant la puissance de Google Maps avec la réalité augmentée pour une orientation plus intuitive.",
+    features: [
+      {
+        title: "Navigation AR",
+        description:
+          "Navigation en réalité augmentée superposée sur le monde réel",
+      },
+      {
+        title: "Intégration Google Maps",
+        description:
+          "Utilisation des données Google Maps pour une navigation précise",
+      },
+      {
+        title: "Mode Hors Ligne",
+        description:
+          "Fonctionnalités de base disponibles sans connexion internet",
+      },
+    ],
     media: {
-      video: 'https://example.com/project.mp4'
-    }
-  },
-  {
-    id: '10',
-    title: 'Cryptocurrency Trading Bot',
-    date: '2023-04-10',
-    company: 'CryptoTech',
-    techStack: ['Python', 'Machine Learning', 'MongoDB', 'Docker'],
-    url: 'https://crypto-trading-bot.io',
-    media: {
+      video: "https://youtube.com/watch?v=armap_demo",
       screenshots: [
-        'https://example.com/crypto1.jpg',
-        'https://example.com/crypto2.jpg',
-        'https://example.com/crypto3.jpg'
-      ]
-    }
+        "/images/armap/ar-view.png",
+        "/images/armap/map-view.png",
+        "/images/armap/navigation.png",
+      ],
+    },
   },
   {
-    id: '11',
-    title: 'Virtual Reality Education Platform',
-    date: '2023-03-15',
-    company: 'EduTech Innovations',
-    techStack: ['Unity', 'C#', 'WebGL', 'Node.js', 'MongoDB'],
-    url: 'https://vr-education.com',
+    id: "together",
+    title: "Together",
+    date: "2023",
+    techStack: ["Flutter", "Dart", "Firebase"],
+    stateManagements: [],
+    url: "https://together-chat.app",
+    playStore:
+      "https://play.google.com/store/apps/details?id=app.together.chat",
+    appleStore: "https://apps.apple.com/app/together-chat/id1234567896",
+    git: "https://github.com/nabilWafick/together",
+    description:
+      "Application de chat en temps réel pour la communication entre camarades de classe",
+    overview:
+      "Together facilite la communication entre étudiants en offrant une plateforme de chat moderne et intuitive spécialement conçue pour le contexte éducatif.",
+    features: [
+      {
+        title: "Authentification",
+        description: "Système d'authentification sécurisé des utilisateurs",
+      },
+      {
+        title: "Messagerie en Temps Réel",
+        description:
+          "Transmission des messages en temps réel pour une communication fluide",
+      },
+      {
+        title: "Groupes de Discussion",
+        description:
+          "Création et gestion de groupes pour différentes classes ou projets",
+      },
+    ],
     media: {
-      video: 'https://example.com/vr.mp4'
-    }
-  },
-  {
-    id: '12',
-    title: 'Weather Forecasting App',
-    date: '2023-02-20',
-    company: 'Weather Tech',
-    techStack: ['React Native', 'Node.js', 'Redis', 'Python'],
-    url: 'https://weather-forecast-pro.com',
-    media: {
+      video: "https://youtube.com/watch?v=together_demo",
       screenshots: [
-        'https://example.com/weather1.jpg',
-        'https://example.com/weather2.jpg',
-        'https://example.com/weather3.jpg'
-      ]
-    }
+        "/images/together/chat.png",
+        "/images/together/groups.png",
+        "/images/together/profile.png",
+      ],
+    },
   },
-  {
-    id: '13',
-    title: 'Music Streaming Service',
-    date: '2023-01-05',
-    company: 'AudioStream',
-    techStack: ['Vue.js', 'Node.js', 'PostgreSQL', 'Redis', 'AWS'],
-    url: 'https://audiostream.fm',
-    media: {
-      video: 'https://example.com/music.mp4'
-    }
-  },
-  {
-    id: '14',
-    title: 'Real Estate Management System',
-    date: '2022-12-10',
-    company: 'PropTech Solutions',
-    techStack: ['Angular', 'Java Spring', 'MySQL', 'Docker'],
-    url: 'https://proptech-solutions.com',
-    media: {
-      screenshots: [
-        'https://example.com/realestate1.jpg',
-        'https://example.com/realestate2.jpg',
-        'https://example.com/realestate3.jpg'
-      ]
-    }
-  },
-  {
-    id: '15',
-    title: 'Supply Chain Tracking Platform',
-    date: '2022-11-15',
-    company: 'LogisticsPro',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Blockchain'],
-    url: 'https://supply-chain-track.com',
-    media: {
-      video: 'https://example.com/supplychain.mp4'
-    }
-  },
-  {
-    id: '16',
-    title: 'Online Learning Platform',
-    date: '2022-10-01',
-    company: 'EduLearn',
-    techStack: ['Next.js', 'Django', 'PostgreSQL', 'AWS'],
-    url: 'https://edulearn-platform.com',
-    media: {
-      screenshots: [
-        'https://example.com/onlinelearning1.jpg',
-        'https://example.com/onlinelearning2.jpg',
-        'https://example.com/onlinelearning3.jpg'
-      ]
-    }
-  },
-  {
-    id: '17',
-    title: 'Healthcare Management System',
-    date: '2022-09-15',
-    company: 'HealthCare Solutions',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Docker'],
-    url: 'https://healthcare-ms.com',
-    media: {
-      video: 'https://example.com/healthcare.mp4'
-    }
-  },
-  {
-    id: '18',
-    title: 'Game Development Engine',
-    date: '2022-08-20',
-    company: 'GameTech',
-    techStack: ['C++', 'OpenGL', 'Python', 'JavaScript'],
-    url: 'https://gametech-engine.dev',
-    media: {
-      screenshots: [
-        'https://example.com/gamedev1.jpg',
-        'https://example.com/gamedev2.jpg',
-        'https://example.com/gamedev3.jpg'
-      ]
-    }
-  },
-  {
-    id: '19',
-    title: 'Restaurant Ordering System',
-    date: '2022-07-10',
-    company: 'FoodTech',
-    techStack: ['React', 'Firebase', 'Node.js', 'Stripe'],
-    url: 'https://foodtech-order.com',
-    media: {
-      video: 'https://example.com/restaurant.mp4'
-    }
-  },
-  {
-    id: '20',
-    title: 'HR Management Platform',
-    date: '2022-06-15',
-    company: 'HR Solutions',
-    techStack: ['Angular', 'Java', 'PostgreSQL', 'Docker'],
-    url: 'https://hr-solutions-pro.com',
-    media: {
-      screenshots: [
-        'https://example.com/hr1.jpg',
-        'https://example.com/hr2.jpg',
-        'https://example.com/hr3.jpg'
-      ]
-    }
-  },
-  {
-    id: '21',
-    title: 'Smart City Management System',
-    date: '2022-05-01',
-    company: 'CityTech',
-    techStack: ['React', 'Python', 'IoT', 'TensorFlow', 'MongoDB'],
-    url: 'https://smartcity-ms.com',
-    media: {
-      video: 'https://example.com/smartcity.mp4'
-    }
-  },
-  {
-    id: '22',
-    title: 'Video Conferencing Platform',
-    date: '2022-04-10',
-    company: 'ConnectPro',
-    techStack: ['WebRTC', 'React', 'Node.js', 'Redis', 'Docker'],
-    url: 'https://connectpro-meet.com',
-    media: {
-      screenshots: [
-        'https://example.com/videoconf1.jpg',
-        'https://example.com/videoconf2.jpg',
-        'https://example.com/videoconf3.jpg'
-      ]
-    }
-  },
-  {
-    id: '23',
-    title: 'Inventory Management System',
-    date: '2022-03-15',
-    company: 'InventoryPro',
-    techStack: ['Vue.js', 'Laravel', 'MySQL', 'Docker'],
-    url: 'https://inventory-pro-ms.com',
-    media: {
-      video: 'https://example.com/inventory.mp4'
-    }
-  }
 ];

@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
-import ResumeButton from './ResumeButton';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import ResumeButton from "./ResumeButton";
+import { Menu, X } from "lucide-react";
 
 export const Nav = () => {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const sections = [
-    { id: 'about', name: 'About', number: '01' },
-    { id: 'experience', name: 'Experience', number: '02' },
-    { id: 'work', name: 'Work', number: '03' },
-    { id: 'contact', name: 'Contact', number: '04' }
+    { id: "about", name: "A Propos", number: "01" },
+    { id: "experience", name: "Expérience", number: "02" },
+    { id: "work", name: "Projets", number: "03" },
+    { id: "contact", name: "Contact", number: "04" },
   ];
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export const Nav = () => {
         });
       },
       {
-        rootMargin: '-50% 0px -50% 0px'
+        rootMargin: "-50% 0px -50% 0px",
       }
     );
 
@@ -47,22 +47,26 @@ export const Nav = () => {
   // Prevent scrolling when menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
   }, [isMenuOpen]);
 
   return (
-    <motion.header 
+    <motion.header
       className="fixed top-0 z-[999] w-full px-6 py-4 backdrop-blur sm:px-12 bg-[#0a192f]/90"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between">
-        <Link href="/" className="text-[#64ffda] relative z-[1000]">
-          <svg
+        <Link
+          href="/"
+          className="text-[#64ffda] relative z-[1000] font-semibold text-2xl"
+        >
+          NS
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
@@ -73,7 +77,7 @@ export const Nav = () => {
             className="h-8 w-8"
           >
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-          </svg>
+          </svg> */}
         </Link>
 
         {/* Desktop Menu */}
@@ -82,10 +86,10 @@ export const Nav = () => {
             <li key={id}>
               <Link
                 href={`/#${id}`}
-                className={`group flex items-center gap-1 font-mono text-sm ${
-                  activeSection === id 
-                    ? 'text-[#64ffda]'
-                    : 'text-[#ccd6f6] hover:text-[#64ffda]'
+                className={`group flex items-center gap-1  text-sm ${
+                  activeSection === id
+                    ? "text-[#64ffda]"
+                    : "text-[#ccd6f6] hover:text-[#64ffda]"
                 }`}
               >
                 <span className="text-[#64ffda]">{number}.</span>
@@ -96,15 +100,24 @@ export const Nav = () => {
           <li>
             <Link
               href="/archive"
-              className="group flex items-center gap-1 font-mono text-sm text-[#ccd6f6] hover:text-[#64ffda]"
+              className="group flex items-center gap-1 text-sm text-[#ccd6f6] hover:text-[#64ffda]"
             >
               <span className="text-[#64ffda]">05.</span>
               <span>Archive</span>
             </Link>
           </li>
+
           <li>
-            <ResumeButton />
+            <Link
+              href="/resume-fr"
+              className="group flex items-center gap-1 text-sm text-[#ccd6f6] hover:text-[#64ffda]"
+            >
+              <span>Résumé</span>
+            </Link>
           </li>
+          {/* <li>
+            <ResumeButton />
+          </li> */}
         </ul>
 
         {/* Mobile Menu Button */}
@@ -149,12 +162,14 @@ export const Nav = () => {
                           href={`/#${id}`}
                           onClick={handleLinkClick}
                           className={`group flex flex-col items-center gap-1.5 font-mono text-base ${
-                            activeSection === id 
-                              ? 'text-[#64ffda]'
-                              : 'text-[#ccd6f6] hover:text-[#64ffda]'
+                            activeSection === id
+                              ? "text-[#64ffda]"
+                              : "text-[#ccd6f6] hover:text-[#64ffda]"
                           }`}
                         >
-                          <span className="text-[#64ffda] text-sm">{number}.</span>
+                          <span className="text-[#64ffda] text-sm">
+                            {number}.
+                          </span>
                           <span>{name}</span>
                         </Link>
                       </li>
@@ -170,7 +185,13 @@ export const Nav = () => {
                       </Link>
                     </li>
                     <li className="pt-6">
-                      <ResumeButton isMobile={true} />
+                      <Link
+                        href="/resume-fr"
+                        className="group flex items-center gap-1 text-sm text-[#ccd6f6] hover:text-[#64ffda]"
+                      >
+                        <span>Résumé</span>
+                      </Link>
+                      {/* <ResumeButton isMobile={true} /> */}
                     </li>
                   </ul>
                 </nav>
@@ -181,4 +202,4 @@ export const Nav = () => {
       </nav>
     </motion.header>
   );
-}
+};

@@ -1,23 +1,27 @@
-import React from 'react';
-import { projects } from '@/data/projects';
-import Link from 'next/link';
+import React from "react";
+import { projects } from "@/data/projects";
+import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 export default function Archive() {
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-[#ccd6f6] mb-8">
-        Archive
-      </h1>
-      
+      <h1 className="text-4xl font-bold text-[#ccd6f6] mb-8">Archive</h1>
+
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
             <tr className="border-b border-zinc-700">
-              <th className="py-2 text-left text-sm text-zinc-400">Year</th>
-              <th className="py-2 text-left text-sm text-zinc-400">Project</th>
-              <th className="py-2 text-left text-sm text-zinc-400 hidden md:table-cell">Made at</th>
-              <th className="py-2 text-left text-sm text-zinc-400 hidden lg:table-cell">Built with</th>
-              <th className="py-2 text-left text-sm text-zinc-400">Link</th>
+              <th className="py-2 text-left text-sm text-zinc-400">Année</th>
+              <th className="py-2 text-left text-sm text-zinc-400">Projet</th>
+              <th className="py-2 text-left text-sm text-zinc-400 hidden md:table-cell">
+                Développé à
+              </th>
+              <th className="py-2 text-left text-sm text-zinc-400 hidden lg:table-cell">
+                Construit avec
+              </th>
+              <th className="py-2 text-left text-sm text-zinc-400">Aperçu</th>
+              <th className="py-2 text-left text-sm text-zinc-400">Lien</th>
             </tr>
           </thead>
           <tbody>
@@ -27,7 +31,7 @@ export default function Archive() {
                   {new Date(project.date).getFullYear()}
                 </td>
                 <td className="py-4">
-                  <Link 
+                  <Link
                     href={`/projects/${project.id}`}
                     className="text-[#ccd6f6] hover:text-[#64ffda]"
                   >
@@ -35,7 +39,7 @@ export default function Archive() {
                   </Link>
                 </td>
                 <td className="py-4 hidden md:table-cell text-zinc-400">
-                  {project.company || '—'}
+                  {project.company || "—"}
                 </td>
                 <td className="py-4 hidden lg:table-cell">
                   <div className="flex flex-wrap gap-2">
@@ -50,6 +54,14 @@ export default function Archive() {
                   </div>
                 </td>
                 <td className="py-4">
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="text-[#ccd6f6] hover:text-[#64ffda]"
+                  >
+                    {project.title}
+                  </Link>
+                </td>
+                <td className="py-4">
                   {project.url && (
                     <a
                       href={project.url}
@@ -57,7 +69,7 @@ export default function Archive() {
                       rel="noopener noreferrer"
                       className="text-[#64ffda] hover:text-[#64ffda]/80"
                     >
-                      Visit
+                      <ExternalLink />
                     </a>
                   )}
                 </td>
