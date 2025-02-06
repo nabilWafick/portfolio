@@ -6,6 +6,8 @@ import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
+import { projects } from "@/data/projects";
+import Link from "next/link";
 
 interface Project {
   title: string;
@@ -189,143 +191,171 @@ export default function Projects() {
       viewport={{ once: true }}
     >
       <motion.div variants={fadeUpVariants}>
-        <h2 className="flex items-center whitespace-nowrap text-2xl font-bold text-[#ccd6f6] mb-10 sm:text-3xl">
-          <span className="font-mono text-[#64ffda] text-xl mr-2">03.</span>
+        <h2 className="flex items-center whitespace-nowrap text-2xl font-bold text-lightestSlate mb-10 sm:text-3xl">
+          <span className="font-mono text-secondary text-xl mr-2">03.</span>
           Projets
           <span className="relative ml-6 w-full h-[1px] bg-[#233554]" />
         </h2>
       </motion.div>
 
       <div className="space-y-48">
-        {technologySections.map((section) => (
-          <div key={section.id} id={section.id} className="scroll-mt-32">
-            <motion.h3
-              variants={fadeUpVariants}
-              className="text-xl font-bold text-[#ccd6f6] mb-16 sm:text-2xl"
-            >
-              {section.title}
-            </motion.h3>
+        <div className="space-y-32">
+          {projects.map((project, index) => {
+            const isRight = (index + 1) % 2 !== 0;
 
-            <div className="space-y-32">
-              {section.projects.map((project, index) => {
-                const isRight = (index + 1) % 2 === 0;
-
-                return (
-                  <motion.div
-                    key={project.title}
-                    variants={fadeUpVariants}
-                    className="relative"
-                  >
-                    <div
-                      className={`md:grid md:grid-cols-12 md:gap-8 items-center 
+            return (
+              <motion.div
+                key={project.title}
+                variants={fadeUpVariants}
+                className="relative"
+              >
+                <div
+                  className={`md:grid md:grid-cols-12 md:gap-8 items-center 
                                   ${isRight ? "" : "text-right"}`}
-                    >
-                      <div
-                        className={`relative md:col-span-7 mb-8 md:mb-0
+                >
+                  <div
+                    className={`relative md:col-span-7 mb-8 md:mb-0
                                     ${isRight ? "md:col-start-6" : ""}`}
-                      >
-                        <a
-                          href={project.external || project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group block"
-                        >
-                          <div className="relative aspect-[16/9] overflow-hidden rounded shadow-lg">
+                  >
+                    <Link
+                      href={`/projects/${project.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block"
+                    >
+                      <div className="relative aspect-[16/9] overflow-hidden rounded shadow-lg">
+                        {project.media?.screenshots &&
+                          project.media?.screenshots?.length > 0 && (
                             <Image
-                              src={project.image}
+                              src={project.media.screenshots[0]}
                               alt={project.title}
                               fill
-                              className="object-cover object-center transition-all duration-300
+                              className="object-contain object-center transition-all duration-300
                                        group-hover:scale-105 group-hover:brightness-50"
                             />
-                          </div>
-                        </a>
+                          )}
                       </div>
+                    </Link>
+                  </div>
 
-                      <div
-                        className={`relative md:col-span-7 
+                  <div
+                    className={`relative md:col-span-7 
                                     ${
                                       isRight
                                         ? "md:col-start-6"
                                         : "md:col-start-1"
                                     }`}
+                  >
+                    <div>
+                      <h3
+                        className={`text-2xl font-bold text-lightestSlate mb-6 
+                                      ${!isRight ? "text-right" : ""}`}
                       >
-                        <div>
-                          <p
-                            className={`font-mono text-[#64ffda] text-sm mb-2 
-                                      ${!isRight ? "text-right" : ""}`}
-                          >
-                            Featured Project
-                          </p>
-                          <h3
-                            className={`text-2xl font-bold text-[#ccd6f6] mb-6 
-                                      ${!isRight ? "text-right" : ""}`}
-                          >
-                            <a
-                              href={project.external || project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:text-[#64ffda] transition-colors"
-                            >
-                              {project.title}
-                            </a>
-                          </h3>
+                        <Link
+                          href={`/projects/${project.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-secondary transition-colors"
+                        >
+                          {project.title}
+                        </Link>
+                      </h3>
 
-                          <p
-                            className={`text-[#8892b0] mb-6 
+                      <p
+                        className={`text-foreground mb-6 
                                       ${!isRight ? "text-right" : ""}`}
-                          >
-                            {project.description}
-                          </p>
+                      >
+                        {project.description}
+                      </p>
 
-                          <ul
-                            className={`flex flex-wrap gap-2.5 mb-8 font-mono text-sm 
+                      <ul
+                        className={`flex flex-wrap gap-2.5 mb-4 font-mono text-sm 
                                        ${!isRight ? "justify-end" : ""}`}
+                      >
+                        {project.techStack.map((tech) => (
+                          <li
+                            key={tech}
+                            className="text-xs font-semibold text-secondary"
                           >
-                            {project.tech.map((tech) => (
-                              <li
-                                key={tech}
-                                className="text-xs font-mono text-[#64ffda]"
-                              >
-                                {tech}
-                              </li>
-                            ))}
-                          </ul>
+                            {tech}
+                          </li>
+                        ))}
+                      </ul>
 
-                          <div
-                            className={`flex items-center gap-4 
+                      <div
+                        className={`flex items-center gap-4 
                                         ${!isRight ? "justify-end" : ""}`}
+                      >
+                        {project.playStore && (
+                          <Link
+                            href={project.playStore}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm hover:font-semibold 
+                            hover:text-secondary
+                            hover:cursor-pointer"
                           >
-                            {project.github && (
-                              <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"
-                              >
-                                <Github className="w-5 h-5" />
-                              </a>
-                            )}
-                            {project.external && (
-                              <a
-                                href={project.external}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"
-                              >
-                                <ExternalLink className="w-5 h-5" />
-                              </a>
-                            )}
-                          </div>
-                        </div>
+                            Play Store
+                          </Link>
+                        )}
+                        {project.appleStore && (
+                          <Link
+                            href={project.appleStore}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm hover:font-semibold 
+                             hover:text-secondary
+                            hover:cursor-pointer"
+                          >
+                            Apple Store
+                          </Link>
+                        )}
+                        {project.gitFrontEnd && (
+                          <Link
+                            href={project.gitFrontEnd}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm hover:font-semibold 
+                             hover:text-secondary
+                            hover:cursor-pointer"
+                          >
+                            Code Front
+                          </Link>
+                        )}
+                        {project.gitBackEnd && (
+                          <Link
+                            href={project.gitBackEnd}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm hover:font-semibold 
+                             hover:text-secondary
+                            hover:cursor-pointer"
+                          >
+                            Code Back
+                          </Link>
+                        )}
+                        {project.url && (
+                          <Link
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink
+                              className="text-sm hover:cursor-pointer 
+                               hover:text-secondary
+                              hover:scale-125 transition-transform"
+                              size={15}
+                            />
+                          </Link>
+                        )}
                       </div>
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        ))}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </motion.section>
   );

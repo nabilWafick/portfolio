@@ -7,13 +7,13 @@ import MainLayout from "@/layouts/MainLayout";
 
 export default function Home() {
   return (
-    <MainLayout>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* <Nav /> */}
       <Hero />
       <About />
       <Experience />
       <Projects />
       <Contact />
-    </MainLayout>
+    </div>
   );
 }

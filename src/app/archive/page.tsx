@@ -5,8 +5,10 @@ import { ExternalLink } from "lucide-react";
 
 export default function Archive() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-[#ccd6f6] mb-8">Archive</h1>
+    <div className="max-w-6xl sm:px-6 lg:px-8 container mx-auto px-4 py-16 ">
+      <h1 className="text-3xl font-bold text-lightestSlate mb-8 mt-20">
+        Archive
+      </h1>
 
       <div className="overflow-x-auto">
         <table className="w-full">
@@ -33,7 +35,9 @@ export default function Archive() {
                 <td className="py-4">
                   <Link
                     href={`/projects/${project.id}`}
-                    className="text-[#ccd6f6] hover:text-[#64ffda]"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lightestSlate hover:text-secondary"
                   >
                     {project.title}
                   </Link>
@@ -46,7 +50,7 @@ export default function Archive() {
                     {project.techStack.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 text-xs rounded bg-[#64ffda]/10 text-[#64ffda]"
+                        className="px-2 py-1 text-xs rounded bg-secondary/10 text-secondary"
                       >
                         {tech}
                       </span>
@@ -56,7 +60,9 @@ export default function Archive() {
                 <td className="py-4">
                   <Link
                     href={`/projects/${project.id}`}
-                    className="text-[#ccd6f6] hover:text-[#64ffda]"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lightestSlate hover:text-secondary"
                   >
                     {project.title}
                   </Link>
@@ -67,7 +73,7 @@ export default function Archive() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#64ffda] hover:text-[#64ffda]/80"
+                      className="text-secondary hover:text-secondary/80"
                     >
                       <ExternalLink />
                     </a>

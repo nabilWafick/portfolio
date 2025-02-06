@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${ubuntu.className} bg-[#0a192f] text-[#8892b0]`}>
+    <html lang="fr">
+      <body className={`${ubuntu.className}`}>
         <MainLayout>{children}</MainLayout>
       </body>
     </html>

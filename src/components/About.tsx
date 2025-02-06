@@ -53,8 +53,8 @@ export default function About() {
       viewport={{ once: true }}
     >
       <motion.div variants={fadeUpVariants}>
-        <h2 className="flex items-center whitespace-nowrap text-2xl font-bold text-[#ccd6f6] mb-10 sm:text-3xl">
-          <span className="font-mono text-[#64ffda] text-xl mr-2">01.</span>
+        <h2 className="flex items-center whitespace-nowrap text-2xl font-bold text-lightestSlate mb-10 sm:text-3xl">
+          <span className="font-mono text-secondary text-xl mr-2">01.</span>
           A propos
           <span className="relative ml-6 w-full h-[1px] bg-[#233554]" />
         </h2>
@@ -62,7 +62,7 @@ export default function About() {
 
       <div className="grid gap-12 md:grid-cols-[2fr,1fr] md:gap-16">
         <motion.div variants={fadeUpVariants}>
-          <div className="space-y-4 text-[#8892b0]">
+          <div className="space-y-4 text-foreground">
             <p>
               Développeur full stack polyvalent avec une compétence technique
               solide et une passion pour la création de solutions web et mobiles
@@ -82,11 +82,11 @@ export default function About() {
 
           <ul className="mt-6 grid grid-cols-2 gap-2 font-mono text-sm sm:grid-cols-3">
             {technologies.map((tech) => (
-              <li key={tech} className="flex items-center text-[#8892b0]">
-                <span className="mr-2 text-[#64ffda]">▹</span>
+              <li key={tech} className="flex items-center text-foreground">
+                <span className="mr-2 text-secondary">▹</span>
                 <span
                   //  href={`/#${tech.toLowerCase()}`}
-                  className="hover:text-[#64ffda] transition-colors"
+                  className="hover:text-secondary transition-colors"
                 >
                   {tech}
                 </span>
@@ -104,7 +104,7 @@ export default function About() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#8892b0] hover:text-[#64ffda] transition-colors"
+                      className="text-foreground hover:text-secondary transition-colors"
                       aria-label={social.name}
                     >
                       <Icon className="w-6 h-6" />
@@ -121,8 +121,8 @@ export default function About() {
           className="relative mx-auto w-[70%] md:w-full"
         >
           <div className="relative aspect-square">
-            <div className="absolute inset-0 z-10 rounded border-2 border-[#64ffda] translate-x-5 translate-y-5" />
-            <div className="absolute inset-0 rounded bg-[#64ffda] mix-blend-multiply" />
+            <div className="absolute inset-0 z-10 rounded border-2 border-secondary translate-x-5 translate-y-5" />
+            <div className="absolute inset-0 rounded bg-secondary mix-blend-multiply" />
             <div className="relative aspect-square overflow-hidden rounded">
               <Image
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"

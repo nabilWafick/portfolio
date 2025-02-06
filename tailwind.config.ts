@@ -11,8 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        secondary: "var(--green)",
+        lightNavy: "var(--light-navy)",
+        lightestSlate: "var(--lightest-slate)",
+        lightSlate: "var(--light-slate)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 } satisfies Config;

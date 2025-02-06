@@ -3,12 +3,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import ResumeButton from "./ResumeButton";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 export const Nav = () => {
   const [activeSection, setActiveSection] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isArchive = pathname === "/archive";
+  const isProjects = pathname?.split("/")[1] === `projects`;
 
   const sections = [
     { id: "about", name: "A Propos", number: "01" },
@@ -60,24 +63,16 @@ export const Nav = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between">
+      <nav
+        className={` flex ${
+          isProjects ? "" : "max-w-6xl mx-auto"
+        }  items-center justify-between`}
+      >
         <Link
           href="/"
-          className="text-[#64ffda] relative z-[1000] font-semibold text-2xl"
+          className="text-secondary relative z-[1000] font-semibold text-2xl"
         >
           NS
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-8 w-8"
-          >
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-          </svg> */}
         </Link>
 
         {/* Desktop Menu */}
@@ -88,11 +83,11 @@ export const Nav = () => {
                 href={`/#${id}`}
                 className={`group flex items-center gap-1  text-sm ${
                   activeSection === id
-                    ? "text-[#64ffda]"
-                    : "text-[#ccd6f6] hover:text-[#64ffda]"
+                    ? "text-secondary"
+                    : "text-lightestSlate hover:text-secondary"
                 }`}
               >
-                <span className="text-[#64ffda]">{number}.</span>
+                <span className="text-secondary">{number}.</span>
                 <span>{name}</span>
               </Link>
             </li>
@@ -100,29 +95,32 @@ export const Nav = () => {
           <li>
             <Link
               href="/archive"
-              className="group flex items-center gap-1 text-sm text-[#ccd6f6] hover:text-[#64ffda]"
+              className={`group flex items-center gap-1 text-sm ${
+                isArchive
+                  ? "text-secondary"
+                  : "text-lightestSlate hover:text-secondary"
+              }`}
             >
-              <span className="text-[#64ffda]">05.</span>
+              <span className="text-secondary">05.</span>
               <span>Archive</span>
             </Link>
           </li>
 
           <li>
             <Link
-              href="/resume-fr"
-              className="group flex items-center gap-1 text-sm text-[#ccd6f6] hover:text-[#64ffda]"
+              href="/resume-fr.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-1 text-sm text-lightestSlate hover:text-secondary"
             >
               <span>Résumé</span>
             </Link>
           </li>
-          {/* <li>
-            <ResumeButton />
-          </li> */}
         </ul>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-[#64ffda] relative z-[1000]"
+          className="md:hidden text-secondary relative z-[1000]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -152,22 +150,22 @@ export const Nav = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 100 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-y-0 right-0 w-[75%] max-w-sm bg-[#112240] shadow-lg z-[998] p-8"
+                className="fixed inset-y-0 right-0 w-[75%] max-w-sm bg-lightNavy shadow-lg z-[998]"
               >
-                <nav className="flex h-full flex-col items-center justify-center">
+                <nav className="flex h-screen w-full flex-col items-center justify-center bg-lightNavy py-10">
                   <ul className="space-y-6 w-full">
                     {sections.map(({ id, name, number }) => (
                       <li key={id} className="text-center">
                         <Link
                           href={`/#${id}`}
                           onClick={handleLinkClick}
-                          className={`group flex flex-col items-center gap-1.5 font-mono text-base ${
+                          className={`group flex flex-col items-center gap-1.5  text-base ${
                             activeSection === id
-                              ? "text-[#64ffda]"
-                              : "text-[#ccd6f6] hover:text-[#64ffda]"
+                              ? "text-secondary"
+                              : "text-lightestSlate hover:text-secondary"
                           }`}
                         >
-                          <span className="text-[#64ffda] text-sm">
+                          <span className="text-secondary text-sm">
                             {number}.
                           </span>
                           <span>{name}</span>
@@ -178,20 +176,23 @@ export const Nav = () => {
                       <Link
                         href="/archive"
                         onClick={handleLinkClick}
-                        className="group flex flex-col items-center gap-1.5 font-mono text-base text-[#ccd6f6] hover:text-[#64ffda]"
+                        className={`group flex flex-col items-center gap-1.5  text-base ${
+                          isArchive
+                            ? "text-secondary"
+                            : "text-lightestSlate hover:text-secondary"
+                        }`}
                       >
-                        <span className="text-[#64ffda] text-sm">05.</span>
+                        <span className="text-secondary text-sm">05.</span>
                         <span>Archive</span>
                       </Link>
                     </li>
-                    <li className="pt-6">
+                    <li className=" text-center">
                       <Link
-                        href="/resume-fr"
-                        className="group flex items-center gap-1 text-sm text-[#ccd6f6] hover:text-[#64ffda]"
+                        href="/resume-fr.pdf"
+                        className="group flex items-center justify-center text-lightestSlate hover:text-secondary pt-5"
                       >
                         <span>Résumé</span>
                       </Link>
-                      {/* <ResumeButton isMobile={true} /> */}
                     </li>
                   </ul>
                 </nav>
