@@ -69,11 +69,11 @@ export default function About() {
               performant dans le développement frontend que backend
             </p>
             <p>
-              J'ai eu le privilège de concevoir des applications mobiles, des
-              sites web et des logiciels.
+              J&apos;ai eu le privilège de concevoir des applications mobiles,
+              des sites web et des logiciels.
             </p>
             <p>
-              Voici quelques technologies avec lesquelles j'ai travaillé
+              Voici quelques technologies avec lesquelles j&apos;ai travaillé
               récemment:
             </p>
           </div>
