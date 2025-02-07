@@ -1,7 +1,3 @@
-import { Nav } from "@/components/Nav";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-
 export default function ProjectLayout({
   children,
 }: {

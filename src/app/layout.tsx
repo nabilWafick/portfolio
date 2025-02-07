@@ -1,7 +1,7 @@
+import MainLayout from "@/layouts/MainLayout";
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
-import MainLayout from "@/layouts/MainLayout";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],

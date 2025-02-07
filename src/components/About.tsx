@@ -1,10 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
 import { fadeUpVariants } from "@/lib/utils";
-import Link from "next/link";
-import { Github, Linkedin, GitBranch } from "lucide-react";
+import { motion } from "framer-motion";
+import { GitBranch, Github, Linkedin } from "lucide-react";
 
 export default function About() {
   const technologies = [

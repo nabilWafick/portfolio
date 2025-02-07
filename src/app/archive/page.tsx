@@ -1,7 +1,6 @@
-import React from "react";
 import { projects } from "@/data/projects";
-import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 export default function Archive() {
   return (

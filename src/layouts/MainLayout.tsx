@@ -1,5 +1,5 @@
-import React from "react";
 import { Nav } from "@/components/Nav";
+import React from "react";
 
 interface MainLayoutProps {
   children: React.ReactNode;

@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { cn, fadeUpVariants } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { fadeUpVariants } from "@/lib/utils";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 interface Job {
   company: string;

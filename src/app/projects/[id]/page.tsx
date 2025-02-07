@@ -1,12 +1,11 @@
 "use client";
 
-import { use } from "react";
 import { projects } from "@/data/projects";
-import { notFound } from "next/navigation";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { use, useCallback } from "react";
 
 export default function ProjectPage({
   params,

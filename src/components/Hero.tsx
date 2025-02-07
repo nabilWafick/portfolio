@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { fadeUpVariants, staggerContainer } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (

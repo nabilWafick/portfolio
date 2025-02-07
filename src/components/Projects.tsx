@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { projects } from "@/data/projects";
 import { fadeUpVariants } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
-import { Github, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-import { projects } from "@/data/projects";
-import Link from "next/link";
 
 interface Project {
   title: string;
