@@ -40,7 +40,7 @@ export const Nav = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   // Close menu when clicking a link
   const handleLinkClick = () => {

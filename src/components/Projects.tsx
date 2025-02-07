@@ -9,15 +9,6 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  tech: string[];
-  github?: string;
-  external?: string;
-}
-
 export default function Projects() {
   const searchParams = useSearchParams();
   const techFilter = searchParams?.get("tech");
