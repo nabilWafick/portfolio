@@ -33,7 +33,7 @@ export const projects: Project[] = [
     gitFrontEnd: "https://github.com/nabilWafick/masjid",
     url: "https://masjid-one.vercel.app/",
     description:
-      "Site Web pour une mosquée afin de faciliter la collaboration avec les fidèles",
+      "Site Web pour une mosquée pour faciliter la collaboration avec les fidèles",
     overview:
       "Le but du site est de pourvoir partager avec les fidèles les informations, les actualités, les activités de la mosquée et leur permettre de contribuer à travers des aumônes et dons",
     features: [
@@ -223,7 +223,7 @@ Interface utilisateur améliorée : design plus élégant pour une expérience p
     gitBackEnd: "https://github.com/nabilWafick/communitybankapi",
     description: "Logiciel de gestion et de suivi d'activité d'épargne",
     overview:
-      "RST est une solution complète permettant la gestion, la suivie, l'analyse des activités d'épargne d'une PME (Caisse Codes). Les clients épargnent pour recevoir à la fin des produits (ménagers, vivriers, ...).  L'entreprise offre plusieurs games d'épargne qui se resument en des combinaisons de produits (types). Une mise est définie par l'entreprise pour chaque type. Les client reçoivent des cartes en fonction du type choisi. Chaque carte comporte 372 règlements (paiements) soit un règlement pour chaque jour de l'année. Un client peut avoir plusieurs cartes de types distincts. Chaque carte peut peut contenir plusieurs instances du même type. L'activité met en relation les clients et les collecteurs de l'entreprise. L'agence met à la disposition des ses clients des collecteurs chargés de collecter les paiements journaliers des clients. Une fois à l'agence, les collecteurs mettent à la disposition des agents de l'entreprise la fiche de collecte permettant à ces derniers à travers le logiciel de répartir dans la base de données les collectes. Les clients reçoivent à l'échéance de leur carte, les produits auxquels ils ont souscrits ",
+      "RST est une solution complète permettant la gestion, le suivi, l'analyse des activités d'épargne d'une PME (Caisse Codes). Les clients épargnent pour recevoir à la fin des produits (ménagers, vivriers, ...).  L'entreprise offre plusieurs games d'épargne qui se resument en des combinaisons de produits (types). Une mise est définie par l'entreprise pour chaque type. Les client reçoivent des cartes en fonction du type choisi. Chaque carte comporte 372 règlements (paiements) soit au moins un règlement pour chaque jour de l'année. Un client peut avoir plusieurs cartes de types distincts. Chaque carte peut contenir plusieurs instances du même type. L'activité met en relation les clients et les collecteurs de l'entreprise. L'agence met à la disposition de ses clients ses collecteurs chargés de collecter les paiements journaliers des clients. Une fois à l'agence, les collecteurs mettent à la disposition des agents de l'entreprise la fiche de collecte permettant à ces derniers à travers le logiciel de répartir dans la base de données les collectes. Les clients reçoivent à l'échéance de leur carte, les produits auxquels ils ont souscrits.",
     features: [
       {
         title: "Authentification",
